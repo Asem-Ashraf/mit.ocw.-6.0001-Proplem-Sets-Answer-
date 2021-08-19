@@ -1,7 +1,7 @@
 # Problem Set 4C
-# Name: <your name here>
+# Name: asem ashraf
 # Collaborators:
-# Time Spent: x:xx
+# Time Spent: 1:00
 
 import string
 from ps4a import get_permutations
@@ -193,4 +193,3 @@ if __name__ == '__main__':
     enc_message = EncryptedSubMessage(message.apply_transpose(enc_dict))
     print("Decrypted message:  ", enc_message.decrypt_message())
      
-    #TODO: WRITE YOUR TEST CASES HERE
