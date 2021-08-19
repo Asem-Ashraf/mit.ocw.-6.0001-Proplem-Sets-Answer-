@@ -47,10 +47,3 @@ if __name__ == '__main__':
             if i == c:
                 if list.index(i)!=list.index(c):
                     print('re')
-
-#    # Put three example test cases here (for your sanity, limit your inputs
-#    to be three characters or fewer as you will have n! permutations for a 
-#    sequence of length n)
-
-    pass #delete this line and replace with your code here
-
