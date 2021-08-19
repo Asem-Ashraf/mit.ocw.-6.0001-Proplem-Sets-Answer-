@@ -1,7 +1,7 @@
 # 6.0001/6.00 Problem Set 5 - RSS Feed Filter
-# Name:
-# Collaborators:
-# Time:
+# Name: asem ashraf
+# Collaborators: internet(seen solved pset)
+# Time: 8:00
 
 import feedparser
 import string
