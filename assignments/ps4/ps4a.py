@@ -1,7 +1,7 @@
 # Problem Set 4A
 # Name: asem
 # Collaborators: none
-# Time Spent: x:xx
+# Time Spent: 2:00
 
 def get_permutations(sequence:list, word, comlist):
     '''
