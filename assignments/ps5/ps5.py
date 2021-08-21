@@ -1,6 +1,6 @@
 # 6.0001/6.00 Problem Set 5 - RSS Feed Filter
-# Name: asem ashraf
-# Collaborators: internet(seen solved pset)
+# Name: asem
+# Collaborators: seen solved pset
 # Time: 8:00
 
 import feedparser
@@ -102,17 +102,19 @@ class Trigger(object):
 class phrasetrigger(Trigger):
     def __init__(self, phrase):
         self.phrase_list:list = re.findall(r"[a-z,0-9]+", phrase.lower())
-
     def is_phrase_in(self, text):
         text_list = re.findall(r"[a-z,0-9]+", text.lower())
         for i in range(len(text_list)):
             if self.phrase_list[0] == text_list[i]:
                 counter = 1
-                for ank in range(i + 1, min(len(text_list), (len(self.phrase_list)-1)+(i+1))):
-                    if self.phrase_list[counter] == text_list[ank]:
-                        counter += 1
-                        if counter == len(self.phrase_list):
-                            return True
+                if len(self.phrase_list)>1:
+                    for ank in range(i + 1, min(len(text_list), (len(self.phrase_list)-1)+(i+1))):
+                        if self.phrase_list[counter] == text_list[ank]:
+                            counter += 1
+                            if counter == len(self.phrase_list):
+                                return True
+                else:
+                    return True
         return False
 
 
@@ -288,9 +290,10 @@ def main_thread(master):
         def get_cont(newstory):
             if newstory.get_guid() not in guidShown:
                 cont.insert(END, newstory.get_title() + "\n", "title")
-                cont.insert(END, "\n---------------------------------------------------------------\n", "title")
+                cont.insert(END, "---------------------------------------------------------------\n", "title")
                 cont.insert(END, newstory.get_description())
-                cont.insert(END, "\n*********************************************************************\n", "title")
+                cont.insert(END, "\n*********************************************************************\n\n\n", "title")
+
                 guidShown.append(newstory.get_guid())
 
         while True:
@@ -306,7 +309,7 @@ def main_thread(master):
             scrollbar.config(command=cont.yview)
 
             print("Sleeping...")
-            time.sleep(SLEEPTIME)
+            time.sleep(0)
 
     except Exception as e:
         print(e)
