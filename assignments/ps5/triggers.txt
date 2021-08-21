@@ -3,16 +3,16 @@
 // stories!
 
 // title trigger named t1
-t1,TITLE,Livid parents
+t1,TITLE,biden friday
 
 // description trigger named t2
-t2,DESCRIPTION,airport
+t2,DESCRIPTION,biden
 
 // description trigger named t3
-t3,DESCRIPTION,afghan
+t3,DESCRIPTION,3
 
 // after trigger named t4
-t4,AFTER,15 Aug 2021 17:00:10
+t4,AFTER,20 Aug 2021 22:00:09
 
 // composite trigger named t5
 t5,AND,t2,t3
@@ -21,4 +21,4 @@ t5,AND,t2,t3
 t6,AND,t1,t4
 
 // the trigger list contains t5 and t6
-ADD,t5,t6
+ADD,t5,t6,t1,t2,t3
